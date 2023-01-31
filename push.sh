@@ -3,32 +3,12 @@
 IMAGE_NAME=ghcr.io/yumemi-inc/rust
 PLATFORMS=linux/arm64/v8,linux/amd64
 RUST_VERSION_MAJOR=1
-RUST_VERSION_MINOR=66
-RUST_VERSION_PATCH=1
+RUST_VERSION_MINOR=67
+RUST_VERSION_PATCH=0
 
 RUST_VERSION_3="$RUST_VERSION_MAJOR.$RUST_VERSION_MINOR.$RUST_VERSION_PATCH"
 RUST_VERSION_2="$RUST_VERSION_MAJOR.$RUST_VERSION_MINOR"
 RUST_VERSION_1="$RUST_VERSION_MAJOR"
-
-docker buildx build --push \
-  --platform "$PLATFORMS" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_3-bookworm" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_2-bookworm" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_1-bookworm" \
-  --tag "$IMAGE_NAME:bookworm" \
-  "./$RUST_VERSION_3/bookworm"
-
-docker buildx build --push \
-  --platform "$PLATFORMS" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_3-slim-bookworm" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_3-slim" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_2-slim-bookworm" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_2-slim" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_1-slim-bookworm" \
-  --tag "$IMAGE_NAME:$RUST_VERSION_1-slim" \
-  --tag "$IMAGE_NAME:slim-bookworm" \
-  --tag "$IMAGE_NAME:slim" \
-  "./$RUST_VERSION_3/bookworm/slim"
 
 docker buildx build --push \
   --platform "$PLATFORMS" \
