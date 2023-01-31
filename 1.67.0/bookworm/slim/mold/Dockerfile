@@ -1,3 +1,3 @@
-FROM rust:1.67.0-bookworm
+FROM rust:1.67.0-slim-bookworm
 
 RUN apt-get update && apt-get install -y mold
