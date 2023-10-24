@@ -6,7 +6,7 @@ import os
 import subprocess
 import sys
 
-rust_version = "1.70.0"
+rust_version = "1.73.0"
 rustup_version = "1.26.0"
 
 DebianArch = namedtuple("DebianArch", ["bashbrew", "dpkg", "rust"])
@@ -21,10 +21,10 @@ debian_arches = [
 debian_variants = [
     "buster",
     "bullseye",
-    "bookworm"
+    "bookworm",
 ]
 
-default_debian_variant = "bullseye"
+default_debian_variant = "bookworm"
 
 AlpineArch = namedtuple("AlpineArch", ["bashbrew", "apk", "rust"])
 
